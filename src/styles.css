@@ -195,3 +195,28 @@
 @keyframes flow-surge { 0% { stroke-width: 9px; } 100% { } }
 @keyframes flow-fade { from { opacity: 1; } to { opacity: 0; } }
 @keyframes tag-flash { 0%, 80% { opacity: 1; } 40% { opacity: .5; } 100% { opacity: 0; } }
+.intro-header { min-height: 48px; padding: 12px 24px; display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--border); }
+.intro-cover { position: relative; height: min(650px, 78dvh); min-height: 480px; overflow: hidden; }
+.intro-cover-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 30%; }
+.intro-cover-copy { position: absolute; inset: auto 0 0; padding: 24px 0; background: color-mix(in oklch, var(--background) 90%, transparent); }
+.intro-inner { width: min(1080px, calc(100% - 48px)); margin: 0 auto; }
+.intro-cover h1 { font-size: 64px; line-height: 1.2; font-weight: 800; }
+.intro-tagline { font-size: 18px; color: var(--foreground); margin: 8px 0 24px; }
+.intro-enter { height: 44px; padding: 0 18px; font-weight: 800; }
+.intro-story { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding-top: 40px; padding-bottom: 40px; }
+.intro-story h2 { color: var(--foreground); font-size: 24px; line-height: 1.4; margin-bottom: 18px; }
+.intro-story p:not(:first-child) { line-height: 1.85; margin-bottom: 16px; }
+.intro-story figure { margin: 0; }
+.intro-story img { width: 100%; height: auto; display: block; }
+.intro-story figcaption { color: var(--muted-foreground); font-size: 10px; margin-top: 10px; }
+.intro-story .intro-note { color: var(--muted-foreground); font-size: 10px; margin-top: 24px; }
+.intro-footer { border-top: 1px solid var(--border); padding: 16px 24px; font-size: 10px; }
+@media (max-width: 620px) {
+  .intro-header { padding: 12px 16px; font-size: 9px; }
+  .intro-inner { width: calc(100% - 32px); }
+  .intro-cover { min-height: 440px; height: 76dvh; }
+  .intro-cover-image { object-position: 72% top; }
+  .intro-cover h1 { font-size: 44px; }
+  .intro-tagline { font-size: 14px; }
+  .intro-story { grid-template-columns: 1fr; gap: 24px; padding-top: 28px; }
+}
